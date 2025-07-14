@@ -1,0 +1,51 @@
+{
+  "extends": "@electron-toolkit/tsconfig/tsconfig.node.json",
+  "include": [
+    "./*",
+    "src/main/*",
+    "src/main/**/*",
+    "src/preload/*",
+    "src/preload/**/*",
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "types": [
+      "electron-vite/node",
+    ],
+    "lib": [
+      "ESNext",
+    ],
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitReturns": false,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitThis": true,
+    "paths": {
+      "@renderer/*": [
+        "./src/renderer/src/*"
+      ],
+      "@preload/*": [
+        "./src/preload/*"
+      ],
+      "@main/*": [
+        "./src/main/*"
+      ],
+    }
+  }
+}

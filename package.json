@@ -1,0 +1,62 @@
+{
+  "name": "electron-template",
+  "version": "1.0.0",
+  "description": "electron模版",
+  "main": "./out/main/index.js",
+  "author": "github.com/wenxig",
+  "type": "module",
+  "scripts": {
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
+    "typecheck:web": "vue-tsc --noEmit -p tsconfig.web.json --composite false",
+    "typecheck": "bun run typecheck:node && bun run typecheck:web",
+    "start": "electron-vite preview",
+    "dev": "electron-vite dev",
+    "build": "bun run typecheck && electron-vite build",
+    "postinstall": "electron-builder install-app-deps",
+    "build:unpack": "bun run build && electron-builder --dir",
+    "build:win": "bun run build && electron-builder --win",
+    "build:mac": "bun run build && electron-builder --mac",
+    "build:linux": "bun run build && electron-builder --linux"
+  },
+  "dependencies": {
+    "@electron-toolkit/utils": "^4.0.0",
+    "@vicons/material": "^0.13.0",
+    "@vueuse/core": "^13.5.0",
+    "lodash-es": "^4.17.21",
+    "mitt": "^3.0.1",
+    "naive-ui": "^2.42.0",
+    "pinia": "^3.0.3",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@electron-toolkit/tsconfig": "^1.0.1",
+    "@electron/rebuild": "^4.0.1",
+    "@swc/core": "^1.12.14",
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/lodash-es": "^4.17.12",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vitejs/plugin-vue-jsx": "^5.0.1",
+    "electron": "^37.2.1",
+    "electron-builder": "^26.0.12",
+    "electron-vite": "4.0.0-beta.0",
+    "lightningcss": "^1.30.1",
+    "tailwindcss": "4.1.10",
+    "typescript": "^5.8.3",
+    "unplugin-vue-components": "^28.8.0",
+    "vite": "npm:rolldown-vite@^7.0.9",
+    "vue-tsc": "^3.0.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "@swc/core",
+      "@tailwindcss/oxide",
+      "electron",
+      "esbuild"
+    ],
+    "overrides": {
+      "vite": "npm:rolldown-vite@latest"
+    }
+  }
+}
