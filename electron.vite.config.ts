@@ -6,7 +6,7 @@ import { NaiveUiResolver } from "unplugin-vue-components/resolvers"
 import Components from "unplugin-vue-components/vite"
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { mergeConfig } from 'vite'
-const appName = 'title'
+const appName = 'electron-template'
 const globalConfig = defineViteConfig({
   resolve: {
     alias: {

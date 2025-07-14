@@ -1,5 +1,5 @@
 appId: com.wenxig.
-productName: __TITLE__
+productName: electron-template
 directories:
   buildResources: build
 files:
@@ -13,7 +13,7 @@ asarUnpack:
   - resources/**
   - '**/*.node'
 win:
-  executableName: __TITLE__
+  executableName: electron-template
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
