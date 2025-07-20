@@ -1,5 +1,5 @@
 {
-  "name": "electron-template",
+  "name": "@wenxig/electron-template",
   "version": "1.0.0",
   "description": "electron模版",
   "main": "./out/main/index.js",
@@ -17,6 +17,9 @@
     "build:win": "bun run build && electron-builder --win",
     "build:mac": "bun run build && electron-builder --mac",
     "build:linux": "bun run build && electron-builder --linux"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
     "@electron-toolkit/utils": "^4.0.0",
